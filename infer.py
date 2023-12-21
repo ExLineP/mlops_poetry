@@ -1,4 +1,5 @@
-﻿import pickle
+﻿import os
+import pickle
 import string
 
 import pandas as pd
@@ -72,7 +73,10 @@ results_df = pd.DataFrame(
     }
 )
 
-# Save results to a CSV file
-results_df.to_csv("inference_results.csv", index=False)
+directory = "data/results"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+results_df.to_csv(f"{directory}/inference_results.csv", index=False)
 
 print("Inference results saved to 'inference_results.csv'.")

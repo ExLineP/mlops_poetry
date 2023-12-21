@@ -5,6 +5,7 @@
       - id: black
   - repo: https://github.com/PyCQA/isort
     rev: 5.13.2
+    args: ["--profile", "black"]
     hooks:
       - id: isort
   - repo: https://github.com/PyCQA/flake8
